@@ -82,7 +82,8 @@ Monitor AWS billing to stay within limits.
 
 ## 📁 Project Structure
 
-📁 static-website-s3-cloudfront
+```bash
+static-website-s3-cloudfront
 ├── README.md
 ├── index.html
 └── screenshots/
@@ -92,3 +93,4 @@ Monitor AWS billing to stay within limits.
     ├── 04-bucket-policy.png
     ├── 05-cloudfront-config.png
     └── 06-website-verified.png
+```
