@@ -82,13 +82,13 @@ Monitor AWS billing to stay within limits.
 
 ## 📁 Project Structure
 
-static-website-s3-cloudfront/
+📁 static-website-s3-cloudfront
 ├── README.md
 ├── index.html
 └── screenshots/
-├── 01-s3-bucket-created.png
-├── 02-static-hosting-enabled.png
-├── 03-html-uploaded.png
-├── 04-bucket-policy.png
-├── 05-cloudfront-config.png
-└── 06-website-verified.png
+    ├── 01-s3-bucket-created.png
+    ├── 02-static-hosting-enabled.png
+    ├── 03-html-uploaded.png
+    ├── 04-bucket-policy.png
+    ├── 05-cloudfront-config.png
+    └── 06-website-verified.png
