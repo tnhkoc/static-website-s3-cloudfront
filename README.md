@@ -1,95 +1,33 @@
-# 🌐 Static Website Hosting with Amazon S3 + CloudFront
+# Static Website Hosting (S3 + CloudFront)
+> Global content delivery for static sites using Amazon's CDN.
 
-This project demonstrates how to **host a static website** using **Amazon S3** and accelerate global delivery with **Amazon CloudFront**. It is one of the fundamental setups in AWS and forms the backbone of many modern frontend deployments.
+## 🎯 Objective
+Demonstrates the deployment of a high-performance static website hosted on S3 and distributed globally via Amazon CloudFront for low-latency access.
 
----
+## 🚀 Key Features
+- **Global Scalability:** Uses CloudFront edge locations for fast content delivery.
+- **Secure Access:** Configures S3 bucket policies to allow access only via CloudFront (OAC/OAI).
+- **Cost-Effective:** Serverless hosting with no management overhead.
 
-## 🎯 Project Goal
+## 🏗️ Architecture
+```mermaid
+flowchart LR
+  User((User)) -->|HTTPS| CF["CloudFront Distribution"]
+  CF -->|Fetch| S3["S3 Static Bucket"]
+```
 
-- Gain hands-on experience with **S3 static hosting**
-- Learn how to serve content publicly via **CloudFront CDN**
-- Understand basic **security settings** (bucket policies, public access)
-- Deploy a globally available static site
+## 🛠️ Tech Stack
+- **Storage:** Amazon S3
+- **CDN:** Amazon CloudFront
+- **Security:** OAC (Origin Access Control)
 
----
+## 🔧 Setup & Usage
+1. Upload your website files to an S3 bucket.
+2. Enable static website hosting on the bucket.
+3. Create a CloudFront distribution pointing to the S3 bucket origin.
 
-## 🧰 AWS Services Used
-
-| Service       | Purpose                                                                 |
-|---------------|-------------------------------------------------------------------------|
-| Amazon S3     | Host static website content (`index.html`, images, CSS, etc.)           |
-| CloudFront    | Deliver content globally with low latency and caching                   |
-| IAM           | (implicitly) controls access to S3 via policies                         |
-| Route 53 *(optional)* | For custom domain and DNS routing (not used in this basic setup)     |
-
----
-
-## 📷 Setup Steps & Screenshots
-
-### 1. Create an S3 Bucket  
-Create a globally unique bucket and disable “Block all public access”.
-
-![S3 Bucket Created](screenshots/01-s3-bucket-created.png)
+## ✅ Verification
+- Access the website using the CloudFront domain name (e.g., `dxxxxx.cloudfront.net`).
 
 ---
-
-### 2. Enable Static Website Hosting  
-Activate the static hosting feature and specify `index.html` as the root.
-
-![Static Hosting Enabled](screenshots/02-static-hosting-enabled.png)
-
----
-
-### 3. Upload Website Files  
-Upload your static files like `index.html` to the bucket.
-
-![HTML Uploaded](screenshots/03-html-uploaded.png)
-
----
-
-### 4. Configure Bucket Policy  
-Apply a policy to allow public read access.
-
-![Bucket Policy](screenshots/04-bucket-policy.png)
-
----
-
-### 5. Set Up CloudFront Distribution  
-Configure CloudFront to use your S3 bucket as the origin and define the root object.
-
-![CloudFront Config](screenshots/05-cloudfront-config.png)
-
----
-
-### 6. Verify CloudFront Deployment  
-Check the public CloudFront domain to ensure successful delivery.
-
-![CloudFront Verified](screenshots/06-cloudfront-verified.png)
-
----
-
-## 🚀 What Can Be Built on Top of This?
-
-Once this foundational setup is understood, it opens the door to:
-
-- ✅ **React/Vue/Angular** frontend deployments
-- 📁 Versioned documentation sites (e.g., Docusaurus)
-- 📦 Hosting frontends for serverless full-stack apps
-- 🌍 Low-cost portfolio or personal blog hosting
-- 🔐 CloudFront signed URLs for secure content delivery
-- 🌐 Domain integration via Route 53 + HTTPS via ACM (SSL/TLS)
-
----
-
-## 🧠 What You Learn Here Is Fundamental For:
-
-- Serverless architecture (e.g., S3 + Lambda + API Gateway)
-- CI/CD pipelines (upload build artifacts to S3)
-- Multi-region content delivery strategies
-- AWS Certification (SAA, DevOps, etc.)
-
----
-
-## ✅ Final Outcome
-
-You now have a fully functional, **globally available**, low-latency static website hosted on AWS — an essential building block for modern web applications and cloud-based architecture.
+Created by **Tunahan Koç** | [LinkedIn](https://www.linkedin.com/in/tunahan-koc-8b43b765/) | [GitHub](https://github.com/tnhkoc)
