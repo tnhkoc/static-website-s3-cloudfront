@@ -16,6 +16,18 @@ flowchart LR
   CF -->|Fetch| S3["S3 Static Bucket"]
 ```
 
+---
+
+## 📁 Project Structure
+```text
+.
+├── index.html      # Sample static website content
+├── screenshots/    # AWS console configuration visuals
+└── README.md       # Project documentation
+```
+
+---
+
 ## 🛠️ Tech Stack
 - **Storage:** Amazon S3
 - **CDN:** Amazon CloudFront
